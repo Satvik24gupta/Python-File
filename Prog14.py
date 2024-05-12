@@ -13,8 +13,8 @@ def convert_format(input_file, output_file):
     except Exception as e:
         print("An error occurred:", e)
  
-input_file = "input.csv"
-output_file = "output.xt"
+input_file = "Prog14_input.csv"
+output_file = "Prog14_output.xt"
 print()
 convert_format(input_file, output_file)
 print()
