@@ -1,3 +1,4 @@
+#Create a program that reads data from a file and writes it to another file in a different format.
 def convert_format(input_file, output_file):
     try:
         with open(input_file, 'r') as f_i:
