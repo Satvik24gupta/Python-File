@@ -33,8 +33,8 @@ print("-----------1. Insert Record-----------")
 print("-----------2. Update Record-----------")
 choice=int(input())
 if(choice==1):
-    name=input("Enter name; ")
-    email=input("Enter e-mail; ")
+    name=input("Enter name: ")
+    email=input("Enter e-mail: ")
     insert(name,email)
 elif(choice==2):
     email=input("Enter email of which you want to update record: ")

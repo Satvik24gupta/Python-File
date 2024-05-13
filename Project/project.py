@@ -1,4 +1,3 @@
-
 import mysql.connector as sql
 
 # User Defined Functions
@@ -7,127 +6,127 @@ def menu():
     while True:
         print("My Contacts")
         print("===========")
-        print("1. Show Databases")
-        print("2. Create Table")
-        print("3. Show Tables")
-        print("4. Display Table Structure")        
-        print('5. Add Contacts')
-        print('6. Modify Contacts')
-        print('7. Delete Contacts')
-        print('8. Display All Records')
-        print('9. Query')
+        # print("1. Show Databases")
+        # print("2. Create Table")
+        # print("3. Show Tables")
+        # print("4. Display Table Structure")        
+        print('1. Add Contacts')
+        print('2. Modify Contacts')
+        print('3. Delete Contacts')
+        print('4. Display All Records')
+        print('5. Query')
         print('0. Exit')
         
-        choice=input('Enter choice [0-9]: ')
+        choice=input('Enter choice [0-5]: ')
 
+        # if choice == '1':
+        #     showdatabases()
+        # elif choice == '2':
+        #     createtable()
+        # elif choice == '3':
+        #     showtables()
+        # elif choice == '4':
+        #     dispstru()
         if choice == '1':
-            showdatabases()
-        elif choice == '2':
-            createtable()
-        elif choice == '3':
-            showtables()
-        elif choice == '4':
-            dispstru()
-        elif choice == '5':
             addContacts()
-        elif choice == '6':
+        elif choice == '2':
             modifyContacts()
-        elif choice == '7':
+        elif choice == '3':
             deleteContacts()
-        elif choice == '8':
+        elif choice == '4':
             displayAll()
-        elif choice == '9':
+        elif choice == '5':
             queryMenu()
         elif choice == '0':
             break
         else:
             print('Invalid choice')
 
-def showdatabases():
-    con=sql.connect(host='localhost', user='root', passwd='root')
+# def showdatabases():
+#     con=sql.connect(host='localhost', user='root', passwd='root')
 
-    if not con.is_connected():
-        print('Connection failed')
-        return
+#     if not con.is_connected():
+#         print('Connection failed')
+#         return
 
-    cursor = con.cursor()
-    cursor.execute("show databases")
+#     cursor = con.cursor()
+#     cursor.execute("show databases")
 
-    print()
+#     print()
 
-    print("Databases")
-    print("=========")
+#     print("Databases")
+#     print("=========")
 
-    for db in cursor:
-        print(db)
+#     for db in cursor:
+#         print(db)
 
-    print()
+#     print()
     
-    input("Press any key to continue...")
-    con.close()
+#     input("Press any key to continue...")
+#     con.close()
 
-def createtable():
-#   DROP TABLE contacts;
+# def createtable():
+# #   DROP TABLE contacts;
 
-    con=sql.connect(host='localhost', user='root', passwd='root', db='test')
+#     con=sql.connect(host='localhost', user='root', passwd='root', db='test')
     
-    if not con.is_connected():
-        print('Connection failed')
-        return
+#     if not con.is_connected():
+#         print('Connection failed')
+#         return
 
-    cursor = con.cursor()
-    cursor.execute("create table contacts (telephone int primary key, fname varchar(20),\
-    lname varchar(20), address varchar(50), area varchar(10))")
+#     cursor = con.cursor()
+#     cursor.execute("create table contacts (telephone int primary key, fname varchar(20),\
+#     lname varchar(20), address varchar(50), area varchar(10))")
     
-    print("Table created")
-    input("Press any key to continue...")
-    con.close()
+#     print("Table created")
+#     input("Press any key to continue...")
+#     con.close()
 
-def showtables():
-    con=sql.connect(host='localhost', user='root', passwd='root', db='test')
+# def showtables():
+#     con=sql.connect(host='localhost', user='root', passwd='root', db='test')
 
-    if not con.is_connected():
-        print('Connection failed')
-        return
+#     if not con.is_connected():
+#         print('Connection failed')
+#         return
 
-    cursor = con.cursor()
-    cursor.execute("show tables")
+#     cursor = con.cursor()
+#     cursor.execute("show tables")
     
-    print()
+#     print()
 
-    print("Tables")
-    print("======")
+#     print("Tables")
+#     print("======")
 
-    for tbl in cursor:
-        print(tbl)
+#     for tbl in cursor:
+#         print(tbl)
 
-    print()
+#     print()
     
-    input("Press any key to continue...")
-    con.close()
+#     input("Press any key to continue...")
+#     con.close()
 
-def dispstru():
-    con=sql.connect(host='localhost', user='root', passwd='root', db='test')
+# def dispstru():
+#     con=sql.connect(host='localhost', user='root', passwd='root', db='test')
 
-    if not con.is_connected():
-        print('Connection failed')
-        return
+#     if not con.is_connected():
+#         print('Connection failed')
+#         return
 
-    cursor = con.cursor()
-    cursor.execute("desc contacts")
+#     cursor = con.cursor()
+#     cursor.execute("desc contacts")
 
-    print()
+#     print()
 
-    print("Structure of CONTACTS table")
-    print("===========================")
+#     print("Structure of CONTACTS table")
+#     print("===========================")
 
-    print()
+#     print()
 
-    for record in cursor:
-        print(record)
+#     for record in cursor:
+#         print(record)
 
-    input("\nPress any key to continue...")
-    con.close()
+#     input("\nPress any key to continue...")
+#     con.close()
 
 def addContacts():
     con=sql.connect(host='localhost', user='root', passwd='root', db='test')
@@ -501,6 +500,6 @@ def searchArea():
 
     con.close()    
 
-#  __main__ module
+#  _main_ module
 
 menu()
